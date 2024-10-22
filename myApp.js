@@ -25,6 +25,14 @@ res.json({"message":"HELLO THIS IS THE TEST API"});}
 else{
     res.json({"message":"hello this is the test api"});}
 });
+app.get('/:echo/word',(req,res)=>{
+    res.json({"echo":req.params.echo});
+});
+app.route('/name').get((req,res)=>{
+    res.json({"name":req.query.firstname+" "+req.query.lastname});
+}).post((req,res)=>{
+    res.json({"name":req.query.firstname+" "+req.query.lastname});
+})
 
 
 
